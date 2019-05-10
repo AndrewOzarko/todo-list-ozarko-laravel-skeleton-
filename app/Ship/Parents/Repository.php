@@ -15,5 +15,5 @@ class Repository extends BaseRepository
     public function model()
     {
         // TODO: Implement model() method.
-    };
+    }
 }
