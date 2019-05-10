@@ -1,0 +1,10 @@
+<?php
+
+namespace App\Modules\{{moduleName}}\Entities;
+
+use App\Ship\Parents\Entity;
+
+class {{entityName}} extends Entity
+{
+    protected $fillable = [];
+}

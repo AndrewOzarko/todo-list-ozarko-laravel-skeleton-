@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Modules\{{moduleName}}\Repositories;
+
+use App\Modules\{{moduleName}}\Entities\{{modelName}};
+use Prettus\Repository\Eloquent\BaseRepository;
+
+class {{repositoryName}}Repository extends BaseRepository
+{
+    protected $fieldSearchable = [];
+
+    /**
+    * @throws \Prettus\Repository\Exceptions\RepositoryException
+    */
+    public function boot()
+    {
+
+    }
+
+    /**
+    * @return string
+    */
+    function model()
+    {
+        return {{modelName}}::class;
+    }
+}

@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Modules\{{moduleName}}\Actions;
+
+use App\Ship\Abstraction\SubAction;
+
+class {{actionName}}SubAction extends SubAction
+{
+    public function run()
+    {
+
+    }
+}

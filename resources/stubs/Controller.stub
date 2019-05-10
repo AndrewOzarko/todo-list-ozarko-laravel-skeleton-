@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Modules\{{moduleName}}\Http\Controllers;
+
+use App\Ship\Parents\ApiController as ApiParentController;
+
+class {{controllerName}}Controller extends ApiParentController
+{
+    public function getAll{{objectName}}s()
+    {
+
+    }
+
+    public function get{{objectName}}ById()
+    {
+
+    }
+
+    public function create{{objectName}}()
+    {
+
+    }
+
+    public function update{{objectName}}()
+    {
+
+    }
+
+    public function delete{{objectName}}()
+    {
+
+    }
+}
