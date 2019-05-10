@@ -3,9 +3,9 @@
 namespace App\Modules\{{moduleName}}\Repositories;
 
 use App\Modules\{{moduleName}}\Entities\{{modelName}};
-use Prettus\Repository\Eloquent\BaseRepository;
+use App\Ship\Parents\Repository;
 
-class {{repositoryName}}Repository extends BaseRepository
+class {{repositoryName}}Repository extends Repository
 {
     protected $fieldSearchable = [];
 

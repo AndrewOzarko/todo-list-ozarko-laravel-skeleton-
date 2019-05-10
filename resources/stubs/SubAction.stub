@@ -2,7 +2,7 @@
 
 namespace App\Modules\{{moduleName}}\Actions;
 
-use App\Ship\Abstraction\SubAction;
+use App\Ship\Parents\SubAction;
 
 class {{actionName}}SubAction extends SubAction
 {

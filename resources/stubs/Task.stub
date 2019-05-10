@@ -2,7 +2,7 @@
 
 namespace App\Modules\{{moduleName}}\Tasks;
 
-use App\Ship\Abstraction\Task;
+use App\Ship\Parents\Task;
 
 class {{taskName}}Task extends Task
 {
