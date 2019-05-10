@@ -2,12 +2,15 @@
 
 namespace App\Http\Middleware;
 
+use App\Modules\User\Tasks\GetAuthenticatedUserTask;
+use App\Ship\Traits\CallableTrait;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class RedirectIfAuthenticated
+class HasActivation
 {
+    use CallableTrait;
     /**
      * Handle an incoming request.
      *
@@ -18,8 +21,12 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+        $user = $this->call(GetAuthenticatedUserTask::class);
+
+        $hasActivation = ($user && is_null($user->email_verified_at));
+
+        if ($hasActivation) {
+            return redirect('/settings/email');
         }
 
         return $next($request);

@@ -21,6 +21,12 @@ class User extends Entity implements
     use Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail;
     use HasApiTokens, Notifiable;
 
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password'
+    ];
 
     /**
      * Encrypt password before creating
@@ -29,5 +35,13 @@ class User extends Entity implements
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
+    }
+
+    /**
+     * @return string
+     */
+    public function getNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 }

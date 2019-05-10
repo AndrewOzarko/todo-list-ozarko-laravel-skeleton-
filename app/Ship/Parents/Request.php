@@ -10,7 +10,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class Request extends FormRequest implements RequestInterface, ParentInterface
 {
-    public $urlParameters = [];
+    protected $urlParameters = [];
 
     /**
      * @param null $keys
