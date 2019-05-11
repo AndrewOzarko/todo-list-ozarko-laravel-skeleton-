@@ -25,10 +25,9 @@ class ApiController implements ApiControllerInterface, ParentInterface
      */
     protected function transform($data, string $transformer)
     {
-        if($data instanceof Collection || $data instanceof LengthAwarePaginator) {
+        if ($data instanceof Collection || $data instanceof LengthAwarePaginator) {
             return Fractal::collection($data)->transformWith(new $transformer())->toArray();
-        }
-        else if ((new ReflectionClass($data))->implementsInterface(EntityInterface::class)) {
+        } elseif ((new ReflectionClass($data))->implementsInterface(EntityInterface::class)) {
             return Fractal::item($data)->transformWith(new $transformer())->toArray();
         }
     }

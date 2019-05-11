@@ -30,6 +30,4 @@ class ApiController extends ApiParentController
 
         return $this->transform($user, UserTransformer::class);
     }
-
-
 }

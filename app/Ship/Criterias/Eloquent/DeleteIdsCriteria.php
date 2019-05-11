@@ -2,7 +2,7 @@
 
 namespace App\Ship\Criterias\Eloquent;
 
-use App\Ship\Abstraction\AbstractCriteria;
+use App\Ship\Parents\Criteria;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
@@ -10,9 +10,8 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  *
  * @author Andriy Ozarko <andriy.ozarko@redentu.com>
  */
-class DeleteIdsCriteria extends AbstractCriteria
+class DeleteIdsCriteria extends Criteria
 {
-
     private $ids;
 
     public function __construct($ids)

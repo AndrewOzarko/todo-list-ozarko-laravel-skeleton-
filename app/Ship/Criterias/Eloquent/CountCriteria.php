@@ -2,7 +2,7 @@
 
 namespace App\Ship\Criterias\Eloquent;
 
-use App\Ship\Abstraction\AbstractCriteria;
+use App\Ship\Parents\Criteria;
 use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterface;
 
@@ -11,7 +11,7 @@ use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterfa
  *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class CountCriteria extends AbstractCriteria
+class CountCriteria extends Criteria
 {
 
     /**
@@ -39,5 +39,4 @@ class CountCriteria extends AbstractCriteria
     {
         return DB::table($model->getModel()->getTable())->select('*', DB::raw('count('.$this->field.') as total_count'))->groupBy($this->field);
     }
-
 }

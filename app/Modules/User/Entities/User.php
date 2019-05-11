@@ -2,10 +2,12 @@
 
 namespace App\Modules\User\Entities;
 
+use App\Modules\Category\Entities\Category;
 use App\Ship\Parents\Entity;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
@@ -43,5 +45,13 @@ class User extends Entity implements
     public function getNameAttribute()
     {
         return "{$this->first_name} {$this->last_name}";
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function categories() : HasMany
+    {
+        return $this->hasMany(Category::class, 'user_id', 'id');
     }
 }

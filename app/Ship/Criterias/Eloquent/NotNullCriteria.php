@@ -2,7 +2,7 @@
 
 namespace App\Ship\Criterias\Eloquent;
 
-use App\Ship\Abstraction\AbstractCriteria;
+use App\Ship\Parents\Criteria;
 use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterface;
 
 /**
@@ -10,7 +10,7 @@ use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterfa
  *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class NotNullCriteria extends AbstractCriteria
+class NotNullCriteria extends Criteria
 {
 
     /**
@@ -38,5 +38,4 @@ class NotNullCriteria extends AbstractCriteria
     {
         return $model->whereNotNull($this->field);
     }
-
 }

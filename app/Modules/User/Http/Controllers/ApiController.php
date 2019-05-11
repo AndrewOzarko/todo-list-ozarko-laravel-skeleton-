@@ -13,7 +13,6 @@ class ApiController extends ApiParentController
 {
     public function getAllUsers(GetAllUsersRequest $request)
     {
-
     }
 
     /**

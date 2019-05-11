@@ -2,13 +2,13 @@
 
 namespace App\Ship\Criterias\Eloquent;
 
-use App\Ship\Abstraction\AbstractCriteria;
+use App\Ship\Parents\Criteria;
 use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterface;
 
 /**
  * Class SetConnectionCriteria
  */
-class SetConnectionCriteria extends AbstractCriteria
+class SetConnectionCriteria extends Criteria
 {
     private $connection;
 

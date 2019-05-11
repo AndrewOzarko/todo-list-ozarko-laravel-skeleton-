@@ -14,13 +14,12 @@ class UserRepository extends Repository
     */
     public function boot()
     {
-
     }
 
     /**
     * @return string
     */
-    function model()
+    public function model()
     {
         return User::class;
     }

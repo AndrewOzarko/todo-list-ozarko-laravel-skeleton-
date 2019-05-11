@@ -2,18 +2,17 @@
 
 
 namespace App\Ship\Criterias\Eloquent;
-use App\Ship\Abstraction\AbstractCriteria;
-use Prettus\Repository\Contracts\RepositoryInterface;
 
+use App\Ship\Parents\Criteria;
+use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
  * Class ThisLikeThatCriteria
  *
  * @author Andriy Butnar <andriy.butnar@redentu.com>
  */
-class ThisLikeThatCriteria extends AbstractCriteria
+class ThisLikeThatCriteria extends Criteria
 {
-
     private $key;
     private $value;
 

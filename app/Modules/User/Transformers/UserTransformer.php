@@ -42,5 +42,4 @@ class UserTransformer extends Transformer
 
         return $response;
     }
-
 }

@@ -2,7 +2,7 @@
 
 namespace App\Ship\Criterias\Eloquent;
 
-use App\Ship\Abstraction\AbstractCriteria;
+use App\Ship\Parents\Criteria;
 use Carbon\Carbon;
 use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterface;
 
@@ -11,7 +11,7 @@ use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterfa
  *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class CreatedTodayCriteria extends AbstractCriteria
+class CreatedTodayCriteria extends Criteria
 {
 
     /**
@@ -24,5 +24,4 @@ class CreatedTodayCriteria extends AbstractCriteria
     {
         return $model->where('created_at', '>=', Carbon::today()->toDateString());
     }
-
 }

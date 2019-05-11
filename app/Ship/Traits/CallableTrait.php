@@ -8,7 +8,6 @@
 
 namespace App\Ship\Traits;
 
-
 use Dotenv\Exception\InvalidPathException;
 use Illuminate\Support\Facades\App;
 use Prophecy\Exception\Doubler\ClassNotFoundException;
@@ -79,7 +78,6 @@ trait CallableTrait
     {
         // in case passing style names such as containerName@classType
         if ($this->needsParsing($class)) {
-
             $parsedClass = $this->parseClassName($class);
 
             $moduleName = $this->capitalizeFirstLetter($parsedClass[0]);
@@ -193,5 +191,4 @@ trait CallableTrait
             $class->setUI($this->ui);
         }
     }
-
 }

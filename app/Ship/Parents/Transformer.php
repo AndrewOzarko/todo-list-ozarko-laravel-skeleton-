@@ -3,7 +3,6 @@
 
 namespace App\Ship\Parents;
 
-
 use App\Ship\Interfaces\ParentInterface;
 use App\Ship\Interfaces\TransformerInterface;
 use League\Fractal\TransformerAbstract;

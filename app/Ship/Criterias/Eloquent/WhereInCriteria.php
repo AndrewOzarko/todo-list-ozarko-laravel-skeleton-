@@ -2,7 +2,7 @@
 
 namespace App\Ship\Criterias\Eloquent;
 
-use App\Ship\Abstraction\AbstractCriteria;
+use App\Ship\Parents\Criteria;
 use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterface;
 
 /**
@@ -10,7 +10,7 @@ use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterfa
  *
  * @author Andriy Butnar <andriy.butnar@redentu.com>
  */
-class WhereInCriteria extends AbstractCriteria
+class WhereInCriteria extends Criteria
 {
 
     /**

@@ -2,7 +2,7 @@
 
 namespace App\Ship\Criterias\Eloquent;
 
-use App\Ship\Abstraction\AbstractCriteria;
+use App\Ship\Parents\Criteria;
 use Illuminate\Support\Facades\Auth;
 use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterface;
 
@@ -11,7 +11,7 @@ use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterfa
  *
  * @author  Mahmoud Zalt <mahmoud@zalt.me>
  */
-class ThisUserCriteria extends AbstractCriteria
+class ThisUserCriteria extends Criteria
 {
 
     /**
@@ -37,11 +37,10 @@ class ThisUserCriteria extends AbstractCriteria
      */
     public function apply($model, PrettusRepositoryInterface $repository)
     {
-        if(!$this->userId){
+        if (!$this->userId) {
             $this->userId = Auth::user()->id;
         }
 
         return $model->where('id', '=', $this->userId);
     }
-
 }

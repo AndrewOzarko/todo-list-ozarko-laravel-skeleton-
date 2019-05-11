@@ -3,7 +3,6 @@
 
 namespace App\Ship\Parents;
 
-
 use App\Ship\Interfaces\ParentInterface;
 use App\Ship\Interfaces\RequestInterface;
 use Illuminate\Foundation\Http\FormRequest;
@@ -28,7 +27,7 @@ class Request extends FormRequest implements RequestInterface, ParentInterface
      * @param array $requestData
      * @return array
      */
-    private function mergeUrlParametersWithRequestData(Array $requestData)
+    private function mergeUrlParametersWithRequestData(array $requestData)
     {
         if (isset($this->urlParameters) && !empty($this->urlParameters)) {
             foreach ($this->urlParameters as $param) {
