@@ -1,27 +1,28 @@
 <?php
 
-namespace App\Modules\User\Transformers;
+namespace App\Modules\Task\Transformers;
 
 use App\Modules\Category\Transformers\CategoryTransformer;
-use App\Modules\User\Entities\User;
+use App\Modules\Task\Entities\Task;
 use App\Ship\Parents\Transformer;
 use App\Ship\Parents\Entity;
-use League\Fractal\Resource\Collection;
+use League\Fractal\Resource\Item;
 use ReflectionException;
 
-class UserTransformer extends Transformer
+class TaskTransformer extends Transformer
 {
     /**
      * @var  array
      */
     protected $defaultIncludes = [
+
     ];
 
     /**
      * @var  array
      */
     protected $availableIncludes = [
-        'categories'
+        'category'
     ];
 
     /**
@@ -37,8 +38,7 @@ class UserTransformer extends Transformer
             'object' => $this->objectName($entity),
             'id' => $entity->id,
             'name' => $entity->name,
-            'email' => $entity->email,
-            'response-content' => $entity->response_content,
+            'description' => $entity->description,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at
         ];
@@ -47,11 +47,11 @@ class UserTransformer extends Transformer
     }
 
     /**
-     * @param  User  $user
-     * @return Collection
+     * @param  Task  $task
+     * @return Item
      */
-    public function includeCategories(User $user)
+    public function includeCategory(Task $task)
     {
-        return $this->collection($user->categories, new CategoryTransformer());
+        return $this->item($task->category, new CategoryTransformer());
     }
 }

@@ -16,8 +16,9 @@ class UpdateCategoryForUserTask extends Task
      */
     public function run(User $user, array $data)
     {
+        /** @var int $id */
         $id = Arr::get($data, 'id');
-        unset($data['id']);
+        Arr::forget($data, 'id');
 
         /** @var Category $category */
         $category = $user->categories()
